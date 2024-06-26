@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Form</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="text-white">
+  <header class="bg-cover bg-center  h-screen md:pt-16">
+    <div class="bg-opacity-50 h-full flex justify-center items-center">
+      <div class="bg-white text-black p-8 shadow-lg max-w-md w-full">
+        <p id="message"></p>
+        <div class="flex mb-4">
+          <h2 class="text-xl font-bold mx-16 text-center mb-4">Student Object</h2>
+        </div>
+        <hr class="mb-8 text-black">
+        <form id="inputForm">
+          <div class="mb-4">
+            <label for="firstName" class="block text-sm font-bold font-medium mb-2">Enter First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Your First Name" class="w-full px-3 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+          </div>
+          <div class="mb-4">
+            <label for="lastName" class="block text-sm font-bold font-medium mb-2">Enter Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Your Last Name" class="w-full px-3 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+          </div>
+
+          <div class="mb-4">
+            <label for="regNo" class="block text-sm font-bold font-medium mb-2">Enter Reg. No.</label>
+            <input type="number" id="regNo" name="regNo" placeholder="Your Registration Number" class="w-full px-3 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+          </div>
+          <div class="mb-4">
+            <label for="university" class="block text-sm font-bold font-medium mb-2">Enter University Name</label>
+            <input type="text" id="university" name="university" placeholder="Your University Name" class="w-full px-3 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+          </div>
+          <div class="mb-4">
+            <label for="currentSemester" class="block text-sm font-bold font-medium mb-2">Enter Current Semester</label>
+            <input type="number" id="currentSemester" name="currentSemester" placeholder="Current Semester Number" class="w-full px-3 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+          </div>
+          <div class="mb-4">
+            <label for="passingYear" class="block text-sm font-bold font-medium mb-2">Enter Expected Passing Year</label>
+            <input type="number" id="passingYear" name="passingYear" placeholder="Expected Passing Year" class="w-full px-3 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+          </div>
+           <button type="submit" class="w-full py-2 bg-teal-300 text-white font-bold rounded-full bg-blue-600 focus:ring-2 focus:ring-blue-500">Submit</button>
+        </form>
+        <hr class="my-4">
+      </div>
+    </div>
+  </header>
+
+  <script>
+    document.getElementById('inputForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      let firstName = document.getElementById("firstName").value;
+      let lastName = document.getElementById("lastName").value;
+      let regNo = document.getElementById("regNo").value;
+      let university = document.getElementById("university").value;
+      let currentSemester = document.getElementById("currentSemester").value;
+      let passingYear = document.getElementById("passingYear").value;
+      
+    
+
+      let message = "Student Details:\n" + 
+              "Hello, My Name is: " + firstName + " " + lastName + "\n" + 
+              "My Roll No is: " + regNo + "\n" + 
+              "My university name is: " + university + "\n" + 
+              "My Current Semester is: " + currentSemester + "\n" + 
+              "Expected Passing Year: " + passingYear + ".";
+
+      document.getElementById("message").innerText = message;
+    });
+  </script>
+
+</body>
+</html>

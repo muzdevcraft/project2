@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class=" text-white">
+	  <header class="bg-cover bg-center bg-[url('background5.jpg')]">
+	  	<div class="h-screen bg-opacity-50 bg-violet-900">
+           <div class="flex justify-center items-center mb-48 md:pt-36">
+
+                <div class="bg-white text-black p-8 rounded-lg shadow-lg w-80">
+                   <p id="message"></p>
+                  <div class="flex mb-4">
+                    <h2 class="text-xl font-bold ms-16 text-center mb-4">IsPositive</h2>
+                    </div>
+                    <hr class="mb-8 text-black">
+                    <form id="inputForm">
+                        <div class="mb-8">
+                          <label for="email" class="block text-sm font-medium mb-2">ENTER NUMBER</label>
+                            <input type="number" placeholder="Your Name" id="number" name="number" class="w-full px-3 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                       
+                        <button type="submit" class="w-full py-2 bg-teal-300 text-white font-bold rounded-full  hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Click Here</button>
+                    </form>
+                    <hr class="my-4">
+                   
+                   
+                </div>
+            </div>
+        </div>
+    </header>
+ 
+<script>
+  document.getElementById('inputForm').addEventListener('submit', function(isPositive) {
+
+    isPositive.preventDefault();
+          
+          let numb = document.getElementById("number").value;
+          let  message;
+
+            if (numb >= 0) {
+      
+           message = true;
+       
+      }
+        else{
+
+           message = false;
+      }
+
+          document.getElementById("message").innerText = message;
+    
+    });
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+  <title>Max of Two Numbers</title>
+
+</head>
+<body>
+  <section class="bg-cover bg-center bg-[url('back2.jpg')]">
+    <div class="h-screen bg-opacity-50 bg-violet-900">
+      <div class="flex justify-center items-center mb-48 md:pt-36">
+        <div class="bg-white text-black p-8 rounded-lg shadow-lg w-80">
+          <p id="message1"></p>
+          <div class="flex mb-4">
+            <h2 class="text-xl font-bold ms-16 text-center mb-4">MaxOfTwo</h2>
+          </div>
+          <hr class="mb-8 text-black">
+          <form id="inputForm">
+            <div class="mb-8">
+              <label class="block text-sm font-medium mb-2">ENTER First Number</label>
+              <input type="number" placeholder="Your Number" id="number1" name="number1" class="w-full px-3 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+              <label class="block text-sm mt-4 font-medium mb-2">ENTER Second Number</label>
+              <input type="number" placeholder="Your Number" id="number2" name="number2" class="w-full px-3 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            <button type="submit" class="w-full py-2 bg-teal-300 text-white font-bold rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Check Larger Number</button>
+          </form>
+          <hr class="my-4">
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    document.getElementById('inputForm').addEventListener('submit', function(MaxOfTwo) {
+      MaxOfTwo.preventDefault();
+
+      let Number1 = parseFloat(document.getElementById("number1").value);
+      let Number2 = parseFloat(document.getElementById("number2").value);
+      let message;
+
+      if (isNaN(Number1) || isNaN(Number2)) {
+        message = "Please enter valid numbers.";
+      } else if (Number1 > Number2) {
+        message = "The First Number is Larger.";
+      } else if (Number1 < Number2) {
+        message = "The Second Number is Larger.";
+      } else if (Number1 == Number2) {
+        message = "The Both Numbers Are Same.";
+      } else {
+        message = "Both Numbers are Equal.";
+      }
+
+      document.getElementById("message1").innerText = message;
+    });
+  </script>
+</body>
+</html>
